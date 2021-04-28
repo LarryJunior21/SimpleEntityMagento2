@@ -16,7 +16,7 @@ bin/magento cache:clean or bin/magento c:c
 ## Usage
 
 
-[Postman Documentation](https://documenter.getpostman.com/view/15182694/TzK16uf5)
+[Postman Documentation](https://documenter.getpostman.com/view/15572933/TzK16uor)
 
 
 ## Contributing
