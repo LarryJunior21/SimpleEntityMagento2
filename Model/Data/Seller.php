@@ -51,6 +51,25 @@ class Seller extends \Magento\Framework\Api\AbstractExtensibleObject implements 
     }
 
     /**
+     * Get password
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->_get(self::PASSWORD);
+    }
+
+    /**
+     * Set password
+     * @param string $password
+     * @return \Gama\Seller\Api\Data\SellerInterface
+     */
+    public function setPassword($password)
+    {
+        return $this->setData(self::PASSWORD, $password);
+    }
+
+    /**
      * Retrieve existing extension attributes object or create a new one.
      * @return \Gama\Seller\Api\Data\SellerExtensionInterface|null
      */

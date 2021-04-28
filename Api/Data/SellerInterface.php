@@ -17,6 +17,7 @@ interface SellerInterface extends \Magento\Framework\Api\ExtensibleDataInterface
     const SELLER_ID = 'seller_id';
     const ADDRESS = 'address';
     const UPDATEDAT = 'updatedat';
+    const PASSWORD = 'password';
     const NAME = 'name';
     const EMAIL = 'email';
 
@@ -45,6 +46,19 @@ interface SellerInterface extends \Magento\Framework\Api\ExtensibleDataInterface
      * @return \Gama\Seller\Api\Data\SellerInterface
      */
     public function setName($name);
+
+    /**
+     * Get name
+     * @return string|null
+     */
+    public function getPassword();
+
+    /**
+     * Set name
+     * @param string $password
+     * @return \Gama\Seller\Api\Data\SellerInterface
+     */
+    public function setPassword($password);
 
     /**
      * Retrieve existing extension attributes object or create a new one.

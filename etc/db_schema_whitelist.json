@@ -1,0 +1,22 @@
+{
+    "gama_seller_seller": {
+        "column": {
+            "seller_id": true,
+            "name": true,
+            "password": true,
+            "email": true,
+            "adminaccess": true,
+            "address": true,
+            "productsid": true,
+            "bankaccount": true,
+            "createdat": true,
+            "updatedat": true
+        },
+        "index": {
+            "GAMA_SELLER_SELLER_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

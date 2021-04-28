@@ -96,20 +96,23 @@ class SellerRepository implements SellerRepositoryInterface
             $storeId = $this->storeManager->getStore()->getId();
             $seller->setStoreId($storeId);
         } */
-        
+
         $sellerData = $this->extensibleDataObjectConverter->toNestedArray(
             $seller,
             [],
             \Gama\Seller\Api\Data\SellerInterface::class
         );
-        
+
         $sellerModel = $this->sellerFactory->create()->setData($sellerData);
-        
+
         try {
+            //validate if seller exists before try to save
+            $this->get($seller->getSellerId());
+            //if exists then save the model
             $this->resource->save($sellerModel);
         } catch (\Exception $exception) {
             throw new CouldNotSaveException(__(
-                'Could not save the seller: %1',
+                'Could not update the seller',
                 $exception->getMessage()
             ));
         }
@@ -136,22 +139,22 @@ class SellerRepository implements SellerRepositoryInterface
         \Magento\Framework\Api\SearchCriteriaInterface $criteria
     ) {
         $collection = $this->sellerCollectionFactory->create();
-        
+
         $this->extensionAttributesJoinProcessor->process(
             $collection,
             \Gama\Seller\Api\Data\SellerInterface::class
         );
-        
+
         $this->collectionProcessor->process($criteria, $collection);
-        
+
         $searchResults = $this->searchResultsFactory->create();
         $searchResults->setSearchCriteria($criteria);
-        
+
         $items = [];
         foreach ($collection as $model) {
             $items[] = $model->getDataModel();
         }
-        
+
         $searchResults->setItems($items);
         $searchResults->setTotalCount($collection->getSize());
         return $searchResults;

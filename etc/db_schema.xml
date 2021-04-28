@@ -9,11 +9,12 @@
 		<index referenceId="GAMA_SELLER_SELLER_NAME" indexType="btree">
 			<column name="name"/>
 		</index>
-		<column name="email" nullable="true" xsi:type="varchar" comment="email" length="255"/>
-		<column name="adminaccess" nullable="true" xsi:type="boolean" comment="adminaccess"/>
-		<column name="address" nullable="true" xsi:type="varchar" comment="address" length="255"/>
-		<column name="productsid" nullable="true" xsi:type="text" comment="productsid"/>
-		<column name="bankaccount" nullable="true" xsi:type="varchar" comment="bankaccount" length="255"/>
+        <column name="password"  nullable="false" xsi:type="varchar" comment="password" length="255"/>
+		<column name="email" nullable="false" xsi:type="varchar" comment="email" length="255"/>
+		<column name="adminaccess" nullable="false" xsi:type="boolean" comment="adminaccess"/>
+		<column name="address" nullable="false" xsi:type="varchar" comment="address" length="255"/>
+		<column name="productsid" nullable="false" xsi:type="text" comment="productsid"/>
+		<column name="bankaccount" nullable="false" xsi:type="varchar" comment="bankaccount" length="255"/>
 		<column name="createdat" nullable="true" xsi:type="date" comment="createdat"/>
 		<column name="updatedat" nullable="true" xsi:type="date" comment="updatedat"/>
 	</table>
