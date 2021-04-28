@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Gama\Seller\Api\SellerRepositoryInterface" type="Gama\Seller\Model\SellerRepository"/>
+	<preference for="Gama\Seller\Api\Data\SellerInterface" type="Gama\Seller\Model\Data\Seller"/>
+	<preference for="Gama\Seller\Api\Data\SellerSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>

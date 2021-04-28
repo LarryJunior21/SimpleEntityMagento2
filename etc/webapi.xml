@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/gama-seller/seller" method="POST">
+		<service class="Gama\Seller\Api\SellerRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Gama_Seller::Seller_save"/>
+		</resources>
+	</route>
+	<route url="/V1/gama-seller/seller/search" method="GET">
+		<service class="Gama\Seller\Api\SellerRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Gama_Seller::Seller_view"/>
+		</resources>
+	</route>
+	<route url="/V1/gama-seller/seller/:sellerId" method="GET">
+		<service class="Gama\Seller\Api\SellerRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Gama_Seller::Seller_view"/>
+		</resources>
+	</route>
+	<route url="/V1/gama-seller/seller/:sellerId" method="PUT">
+		<service class="Gama\Seller\Api\SellerRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Gama_Seller::Seller_update"/>
+		</resources>
+	</route>
+	<route url="/V1/gama-seller/seller/:sellerId" method="DELETE">
+		<service class="Gama\Seller\Api\SellerRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Gama_Seller::Seller_delete"/>
+		</resources>
+	</route>
+</routes>

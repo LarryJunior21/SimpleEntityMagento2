@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="gama_seller_seller" resource="default" engine="innodb" comment="gama_seller_seller Table">
+		<column xsi:type="smallint" name="seller_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="seller_id"/>
+		</constraint>
+		<column name="name" nullable="false" xsi:type="varchar" comment="name" length="255"/>
+		<index referenceId="GAMA_SELLER_SELLER_NAME" indexType="btree">
+			<column name="name"/>
+		</index>
+		<column name="email" nullable="true" xsi:type="varchar" comment="email" length="255"/>
+		<column name="adminaccess" nullable="true" xsi:type="boolean" comment="adminaccess"/>
+		<column name="address" nullable="true" xsi:type="varchar" comment="address" length="255"/>
+		<column name="productsid" nullable="true" xsi:type="text" comment="productsid"/>
+		<column name="bankaccount" nullable="true" xsi:type="varchar" comment="bankaccount" length="255"/>
+		<column name="createdat" nullable="true" xsi:type="date" comment="createdat"/>
+		<column name="updatedat" nullable="true" xsi:type="date" comment="updatedat"/>
+	</table>
+</schema>
