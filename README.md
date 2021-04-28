@@ -5,8 +5,8 @@ Simple entity implementation using a seller as example
 ## Installation
 
 Download the .zip or clone this repository!
-- Put the folder into <Your Magento Installation Folder>/app/code/<Vendor>
-- Change the vendor name on registration.php and composer.json files
+- Put the folder into (Your Magento Installation Folder)/app/code/(Vendor)
+- Change the Vendor name on registration.php and composer.json files
 - Then follow bellow:
 
 ```bash
